@@ -21,7 +21,10 @@ def extract_table(table_body,__line__,lines=None):
     # Deciding variable
     if(__line__ == 1 ):
     # Check if table image is  bordered or borderless
+        print('det lines')
         temp_lines_hor, temp_lines_ver = line_detection(table_body)
+        print('det lines finished', temp_lines_hor, temp_lines_ver)
+
     else:
         temp_lines_hor, temp_lines_ver = lines
 
@@ -51,8 +54,8 @@ def extract_table(table_body,__line__,lines=None):
         for x,y in point:
             cv2.line(table,(x,y),(x,y),(0,0,255),8)
 
-    cv2.imshow("intersection",table)
-    cv2.waitKey(0)
+    # cv2.imshow("intersection",table)
+    # cv2.waitKey(0)
 
     # boxno = -1
     box = []
@@ -114,7 +117,7 @@ def extract_table(table_body,__line__,lines=None):
     # count = 1
     # for i in box:
     #     cv2.rectangle(table_body, (i[0], i[1]), (i[6], i[7]), (int(i[7]%255),0,int(i[0]%255)), 2)
-    # #     count+=1
+    #     count+=1
     # cv2.imshow("cells",table_body)
     # cv2.waitKey(0)
     ############################

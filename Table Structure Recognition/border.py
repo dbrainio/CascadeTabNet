@@ -8,7 +8,10 @@ import cv2
 def border(table,image):
     image_np = image#[table[1]-10:table[3]+10,table[0]-10:table[2]+10]
     imag = image.copy()
+    print("imag")
+    print(imag)
     final = extract_table(image_np,1)
+    print("FINAL")
     if final is None:
         return None
     X = []
